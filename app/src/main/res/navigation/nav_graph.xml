@@ -15,10 +15,24 @@
             app:destination="@id/menuScreen"
             app:popUpTo="@id/splashScreen"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreen_to_introductionScreen"
+            app:destination="@id/introductionScreen" />
     </fragment>
     <fragment
         android:id="@+id/menuScreen"
         android:name="uz.gita.bonusapp.presentation.ui.screen.fargment.MenuScreen"
         android:label="menu_screen"
         tools:layout="@layout/menu_screen" />
+    <fragment
+        tools:layout="@layout/screen_introduction"
+        android:id="@+id/introductionScreen"
+        android:name="uz.gita.bonusapp.presentation.ui.screen.fargment.IntroductionScreen"
+        android:label="IntroductionScreen" >
+        <action
+            android:id="@+id/action_introductionScreen_to_menuScreen"
+            app:destination="@id/menuScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

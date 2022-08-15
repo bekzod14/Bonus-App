@@ -18,7 +18,7 @@ class SplashScreen : Fragment(R.layout.splash_screen) {
         super.onCreate(savedInstanceState)
 
         viewModel.splashLiveData.observe(this){
-            findNavController().navigate(SplashScreenDirections.actionSplashScreenToMenuScreen())
+            findNavController().navigate(SplashScreenDirections.actionSplashScreenToIntroductionScreen())
         }
     }
 }
