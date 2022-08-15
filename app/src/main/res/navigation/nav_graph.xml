@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_garph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="uz.gita.bonusapp.presentation.ui.screen.fargment.SplashScreen"
+        android:label="splash_screen"
+        tools:layout="@layout/splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_menuScreen"
+            app:destination="@id/menuScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashScreen_to_introductionScreen"
+            app:destination="@id/introductionScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuScreen"
+        android:name="uz.gita.bonusapp.presentation.ui.screen.fargment.MenuScreen"
+        android:label="menu_screen"
+        tools:layout="@layout/menu_screen" />
+    <fragment
+        tools:layout="@layout/screen_introduction"
+        android:id="@+id/introductionScreen"
+        android:name="uz.gita.bonusapp.presentation.ui.screen.fargment.IntroductionScreen"
+        android:label="IntroductionScreen" >
+        <action
+            android:id="@+id/action_introductionScreen_to_menuScreen"
+            app:destination="@id/menuScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
