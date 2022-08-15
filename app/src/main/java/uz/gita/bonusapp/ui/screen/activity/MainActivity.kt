@@ -1,4 +1,4 @@
-package uz.gita.bonusapp.presentation.ui.screen.activity
+package uz.gita.bonusapp.ui.screen.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

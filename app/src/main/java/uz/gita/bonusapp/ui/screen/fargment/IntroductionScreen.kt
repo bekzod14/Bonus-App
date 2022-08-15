@@ -1,20 +1,19 @@
-package uz.gita.bonusapp.presentation.ui.screen.fargment
+package uz.gita.bonusapp.ui.screen.fargment
 
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import uz.gita.bonusapp.R
-import uz.gita.bonusapp.adapter.FragmentAdpter
+import uz.gita.bonusapp.ui.adapter.IntroPageAdapter
 import uz.gita.bonusapp.data.PageData
-import uz.gita.bonusapp.presentation.ui.viewmodel.IntroductionViewModel
-import uz.gita.bonusapp.presentation.ui.viewmodel.impl.IntroductionViewModelImpl
+import uz.gita.bonusapp.presentation.IntroductionViewModel
+import uz.gita.bonusapp.presentation.impl.IntroductionViewModelImpl
 
 class IntroductionScreen : Fragment(R.layout.screen_introduction) {
     private val viewModel: IntroductionViewModel by viewModels<IntroductionViewModelImpl>()
@@ -31,7 +30,7 @@ class IntroductionScreen : Fragment(R.layout.screen_introduction) {
             R.drawable.ic_launcher_background, "page_3"
         )
     )
-    private val adapter: FragmentAdpter by lazy { FragmentAdpter(this, list) }
+    private val adapter: IntroPageAdapter by lazy { IntroPageAdapter(this, list) }
     private lateinit var viewPager2: ViewPager2
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

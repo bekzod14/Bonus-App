@@ -1,13 +1,12 @@
-package uz.gita.bonusapp.adapter
+package uz.gita.bonusapp.ui.adapter
 
-import android.os.Bundle
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import uz.gita.bonusapp.data.PageData
-import uz.gita.bonusapp.presentation.ui.page.Intropage
+import uz.gita.bonusapp.ui.page.Intropage
 
-class FragmentAdpter(fragment: Fragment, val list:ArrayList<PageData>):FragmentStateAdapter(fragment) {
+class IntroPageAdapter(fragment: Fragment, val list:ArrayList<PageData>):FragmentStateAdapter(fragment) {
 
     override fun getItemCount(): Int {
      return   list.size

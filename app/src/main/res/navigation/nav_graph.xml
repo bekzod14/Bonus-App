@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashScreen"
-        android:name="uz.gita.bonusapp.presentation.ui.screen.fargment.SplashScreen"
+        android:name="uz.gita.bonusapp.ui.screen.fargment.SplashScreen"
         android:label="splash_screen"
         tools:layout="@layout/splash_screen" >
         <action
@@ -21,13 +21,17 @@
     </fragment>
     <fragment
         android:id="@+id/menuScreen"
-        android:name="uz.gita.bonusapp.presentation.ui.screen.fargment.MenuScreen"
+        android:name="uz.gita.bonusapp.ui.screen.fargment.MenuScreen"
         android:label="menu_screen"
-        tools:layout="@layout/menu_screen" />
+        tools:layout="@layout/menu_screen" >
+        <action
+            android:id="@+id/action_menuScreen_to_quizScreen"
+            app:destination="@id/quizScreen" />
+    </fragment>
     <fragment
         tools:layout="@layout/screen_introduction"
         android:id="@+id/introductionScreen"
-        android:name="uz.gita.bonusapp.presentation.ui.screen.fargment.IntroductionScreen"
+        android:name="uz.gita.bonusapp.ui.screen.fargment.IntroductionScreen"
         android:label="IntroductionScreen" >
         <action
             android:id="@+id/action_introductionScreen_to_menuScreen"
@@ -35,4 +39,8 @@
             app:popUpTo="@id/splashScreen"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/quizScreen"
+        android:name="uz.gita.bonusapp.ui.screen.fargment.QuizScreen"
+        android:label="QuizScreen" />
 </navigation>

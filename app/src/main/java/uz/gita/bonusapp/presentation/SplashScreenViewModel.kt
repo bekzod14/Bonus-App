@@ -1,4 +1,4 @@
-package uz.gita.bonusapp.presentation.ui.viewmodel
+package uz.gita.bonusapp.presentation
 
 import androidx.lifecycle.LiveData
 

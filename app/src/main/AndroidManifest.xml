@@ -15,7 +15,7 @@
         android:theme="@style/Theme.BonusApp"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.ui.screen.activity.MainActivity"
+            android:name="uz.gita.bonusapp.ui.screen.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
