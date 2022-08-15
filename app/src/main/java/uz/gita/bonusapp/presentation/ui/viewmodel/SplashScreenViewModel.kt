@@ -4,5 +4,6 @@ import androidx.lifecycle.LiveData
 
 interface SplashScreenViewModel {
 
-    val splashLiveData: LiveData<Unit>
+    val openIntroductionScreenLiveData: LiveData<Unit>
+    val openMenuScreenLiveData: LiveData<Unit>
 }
