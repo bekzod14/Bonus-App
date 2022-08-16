@@ -21,8 +21,5 @@ class MenuScreen : Fragment(R.layout.menu_screen) {
         btnStart.setOnClickListener {
             navController.navigate(MenuScreenDirections.actionMenuScreenToQuizScreen())
         }
-
     }
-
-
 }
