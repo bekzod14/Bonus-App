@@ -1,4 +1,4 @@
-package uz.gita.bonusapp.presentation.ui.page
+package uz.gita.bonusapp.ui.page
 
 import android.os.Bundle
 import android.view.View

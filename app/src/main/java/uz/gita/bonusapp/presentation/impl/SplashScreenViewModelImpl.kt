@@ -1,12 +1,12 @@
-package uz.gita.bonusapp.presentation.ui.viewmodel.impl
+package uz.gita.bonusapp.presentation.impl
 
 import androidx.lifecycle.*
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import uz.gita.bonusapp.presentation.ui.viewmodel.SplashScreenViewModel
+import uz.gita.bonusapp.presentation.SplashScreenViewModel
 import uz.gita.bonusapp.repository.Repository
 
-class SplashScreenViewModelImpl:SplashScreenViewModel, ViewModel() {
+class SplashScreenViewModelImpl: SplashScreenViewModel, ViewModel() {
 
     private val repository=Repository
     override val openIntroductionScreenLiveData = MutableLiveData<Unit>()

@@ -1,9 +1,8 @@
-package uz.gita.bonusapp.presentation.ui.viewmodel.impl
+package uz.gita.bonusapp.presentation.impl
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import uz.gita.bonusapp.presentation.ui.viewmodel.IntroductionViewModel
+import uz.gita.bonusapp.presentation.IntroductionViewModel
 
 class IntroductionViewModelImpl : IntroductionViewModel, ViewModel() {
     override val openMenuScreenLiveData = MutableLiveData<Unit>()
