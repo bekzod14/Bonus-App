@@ -7,4 +7,7 @@ data class SelectionQuizData(
     val variant3: String,
     val variant4: String,
     val answer: String
-):QuizData()
+):QuizData() {
+    override val type: String
+        get() = "Selection"
+}

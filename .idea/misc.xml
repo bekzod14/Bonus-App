@@ -3,9 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.18659420289855072" />
-        <entry key="app/src/main/res/layout/menu_screen.xml" value="0.19746376811594202" />
-        <entry key="app/src/main/res/layout/screen_quiz.xml" value="0.20108695652173914" />
+        <entry key="..\:/GITA/Bonus-App/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/GITA/Bonus-App/app/src/main/res/layout/menu_screen.xml" value="0.2" />
+        <entry key="..\:/GITA/Bonus-App/app/src/main/res/layout/splash_screen.xml" value="0.33" />
+        <entry key="..\:/Users/ixtiy/AndroidStudioProjects/Bonus-App1/app/src/main/res/drawable/default_dot.xml" value="0.18" />
+        <entry key="..\:/Users/ixtiy/AndroidStudioProjects/Bonus-App1/app/src/main/res/drawable/selected_dot.xml" value="0.18" />
+        <entry key="..\:/Users/ixtiy/AndroidStudioProjects/Bonus-App1/app/src/main/res/drawable/tab_selector.xml" value="0.18" />
+        <entry key="..\:/Users/ixtiy/AndroidStudioProjects/Bonus-App1/app/src/main/res/layout/page_screen1.xml" value="0.20512820512820512" />
+        <entry key="..\:/Users/ixtiy/AndroidStudioProjects/Bonus-App1/app/src/main/res/layout/page_screen2.xml" value="0.25" />
+        <entry key="..\:/Users/ixtiy/AndroidStudioProjects/Bonus-App1/app/src/main/res/layout/page_screen3.xml" value="0.25" />
+        <entry key="..\:/Users/ixtiy/AndroidStudioProjects/Bonus-App1/app/src/main/res/layout/screen_introduction.xml" value="0.16799999999999998" />
+        <entry key="app/src/main/res/layout/page_true_false.xml" value="0.19375" />
+        <entry key="app/src/main/res/layout/screen_quiz.xml" value="0.19375" />
       </map>
     </option>
   </component>

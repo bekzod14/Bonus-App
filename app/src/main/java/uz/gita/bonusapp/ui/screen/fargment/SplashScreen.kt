@@ -5,12 +5,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import uz.gita.bonusapp.R
-import uz.gita.bonusapp.presentation.SplashScreenViewModel
+import uz.gita.bonusapp.presentation.SplashViewModel
 import uz.gita.bonusapp.presentation.impl.SplashScreenViewModelImpl
 
 class SplashScreen : Fragment(R.layout.splash_screen) {
 
-    private val viewModel : SplashScreenViewModel by viewModels<SplashScreenViewModelImpl>()
+    private val viewModel : SplashViewModel by viewModels<SplashScreenViewModelImpl>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

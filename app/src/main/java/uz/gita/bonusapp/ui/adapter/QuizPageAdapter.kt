@@ -18,20 +18,16 @@ class QuizPageAdapter(fa: FragmentActivity, private val quizzes: List<QuizData>)
     override fun createFragment(position: Int): Fragment {
         val page = when (quizzes[position]) {
             is MoveQuizData -> {
-                val page = MoveQuizPage()
-                page
+                MoveQuizPage()
             }
             is TrueFalseQuizData -> {
-                val page = TrueFalseQuizPage()
-                page
+                TrueFalseQuizPage()
             }
             is SelectionQuizData -> {
-                val page = SelectionQuizPage()
-                page
+                SelectionQuizPage()
             }
             is InputQuizData -> {
-                val page = InputQuizPage()
-                page
+                InputQuizPage()
             }
         }
         page.arguments = bundleOf(Pair("quiz", quizzes[position]))

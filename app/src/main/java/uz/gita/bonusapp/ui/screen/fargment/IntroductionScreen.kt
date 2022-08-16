@@ -11,7 +11,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import uz.gita.bonusapp.R
 import uz.gita.bonusapp.ui.adapter.IntroPageAdapter
-import uz.gita.bonusapp.data.PageData
+import uz.gita.bonusapp.data.IntroPageData
 import uz.gita.bonusapp.presentation.IntroductionViewModel
 import uz.gita.bonusapp.presentation.impl.IntroductionViewModelImpl
 
@@ -19,14 +19,14 @@ class IntroductionScreen : Fragment(R.layout.screen_introduction) {
     private val viewModel: IntroductionViewModel by viewModels<IntroductionViewModelImpl>()
     private lateinit var btnNext: Button
     private lateinit var tab_layout: TabLayout
-    private val list: ArrayList<PageData> = arrayListOf(
-        PageData(
+    private val list: ArrayList<IntroPageData> = arrayListOf(
+        IntroPageData(
             R.drawable.ic_launcher_foreground, "page_1"
         ),
-        PageData(
+        IntroPageData(
             R.drawable.ic_launcher_background, "page_2"
         ),
-        PageData(
+        IntroPageData(
             R.drawable.ic_launcher_background, "page_3"
         )
     )

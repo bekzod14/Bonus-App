@@ -1,13 +1,12 @@
 package uz.gita.bonusapp.app
 
 import android.app.Application
-import uz.gita.bonusapp.repository.MySharedPer
-import uz.gita.bonusapp.repository.Repository
+import uz.gita.bonusapp.repository.MySharedPref
 
 class App : Application() {
     override fun onCreate() {
         super.onCreate()
-        MySharedPer.init(this)
+        MySharedPref.init(this)
 
     }
 }

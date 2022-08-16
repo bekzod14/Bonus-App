@@ -61,16 +61,22 @@ class QuizScreen : Fragment(R.layout.screen_quiz) {
         txtQuizNumber = view.findViewById(R.id.txtQuizNumber)
         txtQuizType = view.findViewById(R.id.txtQuizType)
 
+        pagerQuiz.isUserInputEnabled = false
+
         btnNext.setOnClickListener {
             viewModel.next()
+        }
+
+        viewModel.quizCountLiveData.observe(viewLifecycleOwner) {
+            txtQuizNumber.text = it
+        }
+        viewModel.quizTypeLiveData.observe(viewLifecycleOwner) {
+            txtQuizType.text = it
         }
 
         viewModel.quizzesLiveData.observe(viewLifecycleOwner) {
             adapter = QuizPageAdapter(requireActivity(), it)
             pagerQuiz.adapter = adapter
         }
-
-
     }
-
 }

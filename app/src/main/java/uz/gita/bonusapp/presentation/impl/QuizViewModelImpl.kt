@@ -1,6 +1,5 @@
 package uz.gita.bonusapp.presentation.impl
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import uz.gita.bonusapp.data.models.QuizData
@@ -12,7 +11,7 @@ import uz.gita.bonusapp.repository.impl.QuestionRepositoryImpl
 class QuizViewModelImpl : QuizViewModel, ViewModel() {
 
     private val repository: QuestionRepository = QuestionRepositoryImpl()
-    private val quizzes: List<QuizData> = emptyList()
+    private val quizzes: ArrayList<QuizData> = arrayListOf()
 
     private var correct: Int = 0
 
@@ -24,13 +23,18 @@ class QuizViewModelImpl : QuizViewModel, ViewModel() {
     override val restartQuizLiveData = MutableLiveData<Unit>()
     override val quitQuizLiveData = MutableLiveData<Unit>()
 
+    override val quizCountLiveData = MutableLiveData<String>()
+    override val quizTypeLiveData = MutableLiveData<String>()
 
     override fun next() {
         if (quizzes.size - 1 != currentPosition) {
             nextQuizLiveData.value = (++currentPosition)
+            quizCountLiveData.value = "${currentPosition + 1}/${quizzes.size}"
+            quizTypeLiveData.value = quizzes[currentPosition].type
         } else {
             finishQuizLiveData.value = QuizResultData(quizzes.size, correct, quizzes.size - correct)
         }
+
     }
 
     override fun restart() {
@@ -42,6 +46,10 @@ class QuizViewModelImpl : QuizViewModel, ViewModel() {
     }
 
     init {
-        quizzesLiveData.value = repository.getQuestions()
+        quizzes.addAll(repository.getQuestions())
+        quizzesLiveData.value = quizzes
+
+        quizCountLiveData.value = "${currentPosition + 1}/${quizzes.size}"
+        quizTypeLiveData.value = quizzes[currentPosition].type
     }
 }
