@@ -1,7 +1,5 @@
 package uz.gita.bonusapp.presentation.impl
 
-import android.view.View
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import uz.gita.bonusapp.data.models.TrueFalseQuizData
