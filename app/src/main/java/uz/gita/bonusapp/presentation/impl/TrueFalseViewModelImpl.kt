@@ -8,6 +8,7 @@ import uz.gita.bonusapp.data.models.TrueFalseQuizData
 import uz.gita.bonusapp.presentation.TrueFalseViewModel
 
 class TrueFalseViewModelImpl : TrueFalseViewModel, ViewModel() {
+
     private lateinit var question: TrueFalseQuizData
     override val textQuizLiveData =  MutableLiveData<String>()
     override fun setQuestion(data: TrueFalseQuizData) {
