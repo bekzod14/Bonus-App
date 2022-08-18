@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -43,7 +44,13 @@ class InputQuizPage : Fragment(R.layout.page_input) {
 
         viewModel.answerLiveData.observe(viewLifecycleOwner, answerObserver)
 
-        viewModel.userAnswer(binding.editAnswer.text.toString())
+        binding.editAnswer.doOnTextChanged { text, _, _, _ ->
+            if (text?.toString()?.isNotEmpty() == true) {
+                viewModel.userAnswer(text.toString())
+            }
+        }
+
+
     }
 
     private val answerObserver = Observer<Boolean> {
