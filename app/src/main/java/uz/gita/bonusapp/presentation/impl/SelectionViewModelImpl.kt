@@ -7,13 +7,13 @@ import uz.gita.bonusapp.presentation.SelectionViewModel
 
 class SelectionViewModelImpl : SelectionViewModel, ViewModel() {
     override val quizLiveData = MutableLiveData<SelectionQuizData>()
-    override val answerLiveData = MutableLiveData<String>()
+    override val answerLiveData = MutableLiveData<Boolean>()
 
     override fun setQuiz(selectionQuizData: SelectionQuizData) {
         quizLiveData.value = selectionQuizData
     }
 
     override fun userAnswer(answer: String) {
-        answerLiveData.value = answer
+        answerLiveData.postValue(answer == quizLiveData.value!!.answer)
     }
 }

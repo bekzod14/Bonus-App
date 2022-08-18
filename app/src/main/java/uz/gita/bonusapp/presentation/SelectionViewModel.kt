@@ -5,7 +5,7 @@ import uz.gita.bonusapp.data.models.SelectionQuizData
 
 interface SelectionViewModel {
     val quizLiveData: LiveData<SelectionQuizData>
-    val answerLiveData: LiveData<String>
+    val answerLiveData: LiveData<Boolean>
 
     fun setQuiz(selectionQuizData: SelectionQuizData)
     fun userAnswer(answer: String)
