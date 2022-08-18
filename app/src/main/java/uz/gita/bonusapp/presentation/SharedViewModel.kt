@@ -1,8 +1,11 @@
 package uz.gita.bonusapp.presentation
 
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.LiveData
 
-class SharedViewModel : ViewModel() {
+interface SharedViewModel {
 
+    val answerLiveData: LiveData<Boolean>
+
+    fun setAnswer(answer: Boolean)
 
 }

@@ -45,6 +45,10 @@ class QuizViewModelImpl : QuizViewModel, ViewModel() {
         quitQuizLiveData.value = Unit
     }
 
+    override fun addCorrect() {
+        correct++
+    }
+
     init {
         quizzes.addAll(repository.getQuestions())
         quizzesLiveData.value = quizzes

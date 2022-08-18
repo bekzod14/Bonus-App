@@ -6,18 +6,23 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import uz.gita.bonusapp.R
 import uz.gita.bonusapp.presentation.QuizViewModel
+import uz.gita.bonusapp.presentation.SharedViewModel
 import uz.gita.bonusapp.presentation.impl.QuizViewModelImpl
+import uz.gita.bonusapp.presentation.impl.SharedViewModelImpl
 import uz.gita.bonusapp.ui.adapter.QuizPageAdapter
 
 class QuizScreen : Fragment(R.layout.screen_quiz) {
 
     private val navController by lazy { findNavController() }
     private val viewModel: QuizViewModel by viewModels<QuizViewModelImpl>()
+    private val sharedViewModel: SharedViewModel by activityViewModels<SharedViewModelImpl>()
 
     private var adapter: QuizPageAdapter? = null
     private lateinit var pagerQuiz: ViewPager2
@@ -31,6 +36,7 @@ class QuizScreen : Fragment(R.layout.screen_quiz) {
         viewModel.quitQuizLiveData.observe(this) {
             navController.navigateUp()
         }
+        sharedViewModel.answerLiveData.observe(this, answerObserver)
 
         viewModel.finishQuizLiveData.observe(this) {
             AlertDialog.Builder(requireContext())
@@ -65,6 +71,8 @@ class QuizScreen : Fragment(R.layout.screen_quiz) {
 
         btnNext.setOnClickListener {
             viewModel.next()
+            if (sharedViewModel.answerLiveData.value!!) viewModel.addCorrect()
+            btnNext.isEnabled = false
         }
 
         viewModel.quizCountLiveData.observe(viewLifecycleOwner) {
@@ -78,5 +86,9 @@ class QuizScreen : Fragment(R.layout.screen_quiz) {
             adapter = QuizPageAdapter(requireActivity(), it)
             pagerQuiz.adapter = adapter
         }
+    }
+
+    private val answerObserver = Observer<Boolean> {
+        btnNext.isEnabled = true
     }
 }

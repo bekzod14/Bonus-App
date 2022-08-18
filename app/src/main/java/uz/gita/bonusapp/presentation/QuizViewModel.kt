@@ -19,4 +19,6 @@ interface QuizViewModel {
 
     fun quit()
 
+    fun addCorrect()
+
 }

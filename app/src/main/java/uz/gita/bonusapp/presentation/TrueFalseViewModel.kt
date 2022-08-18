@@ -7,6 +7,8 @@ interface TrueFalseViewModel {
 
     val textQuizLiveData: LiveData<String>
 
+    val variantLiveData: LiveData<Boolean>
+
     fun setQuestion(data: TrueFalseQuizData)
 
     fun selectTrue()
