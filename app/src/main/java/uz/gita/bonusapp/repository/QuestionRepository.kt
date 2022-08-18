@@ -6,5 +6,4 @@ interface QuestionRepository {
 
     fun getQuestions(): List<QuizData>
 
-
 }
