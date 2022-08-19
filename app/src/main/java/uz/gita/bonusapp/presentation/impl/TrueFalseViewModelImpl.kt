@@ -20,10 +20,10 @@ class TrueFalseViewModelImpl : TrueFalseViewModel, ViewModel() {
 
 
     override fun selectTrue() {
-        variantLiveData.postValue(question.answer)
+        variantLiveData.value = true == question.answer
     }
 
     override fun selectFalse() {
-        variantLiveData.postValue(question.answer)
+        variantLiveData.value = (!question.answer)
     }
 }

@@ -38,7 +38,12 @@ class QuizViewModelImpl : QuizViewModel, ViewModel() {
     }
 
     override fun restart() {
+        currentPosition = 0
+        correct = 0
+        quizzesLiveData.value = quizzes
         restartQuizLiveData.value = Unit
+        quizCountLiveData.value = "${currentPosition + 1}/${quizzes.size}"
+        quizTypeLiveData.value = quizzes[currentPosition].type
     }
 
     override fun quit() {

@@ -11,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import timber.log.Timber
 import uz.gita.bonusapp.R
 import uz.gita.bonusapp.presentation.QuizViewModel
 import uz.gita.bonusapp.presentation.SharedViewModel
@@ -53,7 +54,7 @@ class QuizScreen : Fragment(R.layout.screen_quiz) {
         }
 
         viewModel.restartQuizLiveData.observe(this) {
-            pagerQuiz.adapter = null
+
         }
 
         viewModel.nextQuizLiveData.observe(this) {
@@ -70,9 +71,10 @@ class QuizScreen : Fragment(R.layout.screen_quiz) {
         pagerQuiz.isUserInputEnabled = false
 
         btnNext.setOnClickListener {
-            viewModel.next()
+            Timber.d(sharedViewModel.answerLiveData.value.toString())
             if (sharedViewModel.answerLiveData.value!!) viewModel.addCorrect()
             btnNext.isEnabled = false
+            viewModel.next()
         }
 
         viewModel.quizCountLiveData.observe(viewLifecycleOwner) {
